@@ -103,7 +103,8 @@ const reducer = (state = initialState, action) => {
   - Registers listeners via `subscribe(listener)`
   - Handles un-registering of listeners via the function returned by `subscribe(listener)`
 
-execute:
+Execute:
+
 ```
 ❯ npm install @reduxjs/toolkit react-redux axios
 
@@ -128,4 +129,13 @@ Update state { numOfCakes: 8 }
 Update state { numOfCakes: 7 }
 Update state { numOfCakes: 10 }
 
+```
+
+```
+❯ node ./index.js
+Initial state { numOfCakes: 10 }
+Update state { numOfCakes: 9 }
+Update state { numOfCakes: 8 }
+Update state { numOfCakes: 7 }
+Update state { numOfCakes: 11 }
 ```
