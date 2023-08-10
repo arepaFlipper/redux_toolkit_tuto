@@ -115,4 +115,17 @@ Update state { numOfCakes: 7 }
 
 ```
 
+## Restocking cakes
+- Everyday, a vendor comes to the shop to restock the shelves.
+- The vendor can stock up one or more number of cakes depending on the previous day sales.
 
+
+```
+❯ node ./index.js
+Initial state { numOfCakes: 10 }
+Update state { numOfCakes: 9 }
+Update state { numOfCakes: 8 }
+Update state { numOfCakes: 7 }
+Update state { numOfCakes: 10 }
+
+```
