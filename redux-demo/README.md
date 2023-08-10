@@ -86,3 +86,33 @@ const reducer = (state = initialState, action) => {
 - Have a 'type' property that describes something that happened in the application.
 - The 'type' property is typically defined as string constants.
 
+## reducers
+
+- Specify how the app's state changes in response to actions sent to the store.
+- Function that accepts state and action as arguments, and returns the next state of the application.
+- `(previousState, action)=> newState`
+
+![reducers](Redux6.png)
+
+## Store
+- One store for the entire application.
+- Responsabilities:
+  - Holds App state
+  - Allows access to state via `getState()`
+  - Allows state to be updated via `dispatch()`
+  - Registers listeners via `subscribe(listener)`
+  - Handles un-registering of listeners via the function returned by `subscribe(listener)`
+
+execute:
+```
+❯ npm install @reduxjs/toolkit react-redux axios
+
+❯ node ./index.js
+Initial state { numOfCakes: 10 }
+Update state { numOfCakes: 9 }
+Update state { numOfCakes: 8 }
+Update state { numOfCakes: 7 }
+
+```
+
+
