@@ -139,3 +139,20 @@ Update state { numOfCakes: 8 }
 Update state { numOfCakes: 7 }
 Update state { numOfCakes: 11 }
 ```
+
+## Cakes & Ice Creams!
+- Cake Shop
+- Cakes stored on the shelf
+- Shopkeeper to handle CAKE_ORDERED from customer
+
+---
+
+- Sell ice creams!
+- Ice creams stored in the freezer
+- New Shopkeeper to handle ICECREAM_ORDERED from customer
+
+---
+
+- State of the shop is now the number of cakes on the shelf along with the number of ice creams in the freezer.
+- Separate shopkeepers help with scalability.
+- Separate shopkeepers help narrow down on a problem when one does arise.
