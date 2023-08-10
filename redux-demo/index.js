@@ -38,7 +38,7 @@ const unsubscribe = store.subscribe(() => {
 })
 
 store.dispatch(orderCake()); // remove 1
-store.dispatch(orderCake()); // remove 1
+store.dispatch({ type: CAKE_ORDERED, quantity: 1 });
 store.dispatch(orderCake()); // remove 1
 
 unsubscribe();
