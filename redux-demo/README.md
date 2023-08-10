@@ -76,7 +76,8 @@ const reducer = (state = initialState, action) => {
 ```
 
 #### Three Principles Overview
-![Three Principles Overview](Redux0.png)
+
+![Three Principles Overview](images/redux-demo/three-principles.png)
 
 ## Actions
 - The only way your application can interact with the store.
@@ -84,6 +85,4 @@ const reducer = (state = initialState, action) => {
 - Plain JavaScript objects.
 - Have a 'type' property that describes something that happened in the application.
 - The 'type' property is typically defined as string constants.
-
-![Actions](images/redux-demo/Redux02.png)
 

@@ -1,1 +1,10 @@
-console.log(`🛃%cindex.js:1 - Hello World`, 'font-weight:bold; background:66846720;color:#fff;');
+const CAKE_ORDERED = 'CAKE_ORDERED';
+
+const orderCake = () => {
+  return (
+    {
+      type: CAKE_ORDERED,
+      quantity: 1,
+    }
+  )
+}
