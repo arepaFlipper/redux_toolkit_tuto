@@ -184,3 +184,68 @@ Update state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 19 } }
 Update state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 18 } }
 Update state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
 ```
+## Immer
+Sometimes you need to update sub-properties of the state:
+We may perform this task by the hard way:
+```
+❯ node ./nested-state.js
+Initial state {
+  name: 'Cristian F. Tovar',
+  address: {
+    street: 'Av. Miguel Hidalgo 123',
+    city: 'Guadalajara',
+    state: 'CA'
+  }
+}
+Updated state {
+  name: 'Cristian F. Tovar',
+  address: { street: 'Fake Street 123', city: 'Guadalajara', state: 'CA' }
+}
+
+```
+Although the code works good, we will struggle with the constantly keep track of the nested-state
+to ensure we are modifying only the required property.
+
+To help ease the updation process, we can use Immer:
+```
+❯ npm install immer
+```
+We now may replace the nested state to return:
+```
+    case STREET_UPDATED:
+      return {
+        ...state,
+        address: {
+          ...state.address,
+          street: action.payload,
+        },
+      };
+
+```
+
+With the following return:
+
+```
+    case STREET_UPDATED:
+      return produce(state, (draft) => {
+        draft.address.street = action.payload;
+      })
+```
+
+And then the refactor is going to perform the same output:
+```
+❯ node ./nested-state.js
+Initial state {
+  name: 'Cristian F. Tovar',
+  address: {
+    street: 'Av. Miguel Hidalgo 123',
+    city: 'Guadalajara',
+    state: 'CA'
+  }
+}
+Updated state {
+  name: 'Cristian F. Tovar',
+  address: { street: 'Fake Street 123', city: 'Guadalajara', state: 'CA' }
+}
+
+```
