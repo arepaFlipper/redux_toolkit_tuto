@@ -171,3 +171,16 @@ Update state { numOfCakes: 10, numOfIcecreams: 18 }
 Update state { numOfCakes: 10, numOfIcecreams: 20 }
 
 ```
+
+## Combine Reducers
+```
+❯ node ./index.js
+Initial state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
+Update state { cake: { numOfCakes: 9 }, icecream: { numOfIcecreams: 20 } }
+Update state { cake: { numOfCakes: 8 }, icecream: { numOfIcecreams: 20 } }
+Update state { cake: { numOfCakes: 7 }, icecream: { numOfIcecreams: 20 } }
+Update state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
+Update state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 19 } }
+Update state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 18 } }
+Update state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
+```
