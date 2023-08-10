@@ -4,6 +4,8 @@ const bindActinCreators = redux.bindActionCreators;
 
 const CAKE_ORDERED = 'CAKE_ORDERED';
 const CAKE_RESTOCKED = 'CAKE_RESTOCKED';
+const ICECREAM_ORDERED = 'ICECREAM_ORDERED';
+const ICECREAM_RESTOCKED = 'ICECREAM_RESTOCKED';
 
 const orderCake = () => {
   return (
@@ -23,9 +25,27 @@ const restockCake = (qty = 1) => {
   )
 }
 
+const orderIcecream = (qty = 1) => {
+  return (
+    {
+      type: ICECREAM_ORDERED,
+      payload: qty,
+    }
+  )
+}
+
+const restockIcecream = (qty = 1) => {
+  return (
+    {
+      type: ICECREAM_RESTOCKED,
+      payload: qty,
+    }
+  )
+}
 
 const initialState = {
   numOfCakes: 10,
+  numOfIcecreams: 20,
 }
 
 // (previousState, action)=> newState
@@ -43,6 +63,18 @@ const reducer = (state = initialState, action) => {
         ...state,
         numOfCakes: state.numOfCakes + action.payload,
       }
+
+    case ICECREAM_ORDERED:
+      return {
+        ...state,
+        numOfIcecreams: state.numOfIcecreams - 1,
+      };
+
+    case ICECREAM_RESTOCKED:
+      return {
+        ...state,
+        numOfIcecreams: state.numOfIcecreams + action.payload,
+      }
     default:
       return state;
   };
@@ -55,16 +87,14 @@ const unsubscribe = store.subscribe(() => {
   console.log('Update state', store.getState());
 })
 
-// store.dispatch(orderCake()); // remove 1
-// store.dispatch({ type: CAKE_ORDERED, payload: 1 });
-// store.dispatch(orderCake()); // remove 1
-// store.dispatch(restockCake(3)); // add 3 to have qty back to 10
-
-const actions = bindActinCreators({ orderCake, restockCake }, store.dispatch);
+const actions = bindActinCreators({ orderCake, restockCake, orderIcecream, restockIcecream }, store.dispatch);
 actions.orderCake();
 actions.orderCake();
 actions.orderCake();
-actions.restockCake(4);
+actions.restockCake(3);
+actions.orderIcecream();
+actions.orderIcecream();
+actions.restockIcecream(2);
 
 unsubscribe();
 

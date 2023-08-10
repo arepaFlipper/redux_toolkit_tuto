@@ -156,3 +156,18 @@ Update state { numOfCakes: 11 }
 - State of the shop is now the number of cakes on the shelf along with the number of ice creams in the freezer.
 - Separate shopkeepers help with scalability.
 - Separate shopkeepers help narrow down on a problem when one does arise.
+
+## Multiple Reducers
+
+```
+❯ node ./index.js
+Initial state { numOfCakes: 10, numOfIcecreams: 20 }
+Update state { numOfCakes: 9, numOfIcecreams: 20 }
+Update state { numOfCakes: 8, numOfIcecreams: 20 }
+Update state { numOfCakes: 7, numOfIcecreams: 20 }
+Update state { numOfCakes: 10, numOfIcecreams: 20 }
+Update state { numOfCakes: 10, numOfIcecreams: 19 }
+Update state { numOfCakes: 10, numOfIcecreams: 18 }
+Update state { numOfCakes: 10, numOfIcecreams: 20 }
+
+```
