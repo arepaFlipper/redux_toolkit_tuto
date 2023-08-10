@@ -43,14 +43,17 @@ const restockIcecream = (qty = 1) => {
   )
 }
 
-const initialState = {
+const initialCakeState = {
   numOfCakes: 10,
+}
+
+const initialIcecreamState = {
   numOfIcecreams: 20,
 }
 
 // (previousState, action)=> newState
 
-const reducer = (state = initialState, action) => {
+const cakeReducer = (state = initialCakeState, action) => {
   switch (action.type) {
     case CAKE_ORDERED:
       return {
@@ -64,23 +67,31 @@ const reducer = (state = initialState, action) => {
         numOfCakes: state.numOfCakes + action.payload,
       }
 
-    case ICECREAM_ORDERED:
-      return {
-        ...state,
-        numOfIcecreams: state.numOfIcecreams - 1,
-      };
-
-    case ICECREAM_RESTOCKED:
-      return {
-        ...state,
-        numOfIcecreams: state.numOfIcecreams + action.payload,
-      }
     default:
       return state;
   };
 };
 
-const store = createStore(reducer);
+const icecreamReducer = (state = initialIcecreamState, action) => {
+  switch (action.type) {
+    case CAKE_ORDERED:
+      return {
+        ...state,
+        numOfCakes: state.numOfCakes - 1,
+      };
+
+    case CAKE_RESTOCKED:
+      return {
+        ...state,
+        numOfCakes: state.numOfCakes + action.payload,
+      }
+
+    default:
+      return state;
+  };
+};
+
+const store = createStore(() => { });
 console.log('Initial state', store.getState());
 
 const unsubscribe = store.subscribe(() => {
