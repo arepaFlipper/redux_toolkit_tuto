@@ -420,3 +420,12 @@ Wrote to /home/tovar/Documents/yt-tutos/Codevolution/Redux-Toolkit-Tutorials/rtk
 ❯ npm i @reduxjs/toolkit
 ```
 
+## Configure the store
+- Create an Slice using createSlice() function, which generates
+the actions and reducers.
+- Perform direct mutations on the state and that is completely okay with 
+immer being used under the hood.
+- Create the store using the configure store function and attach the reducer.
+- Dispatch actions on the store using store dispatch.
+- inspect the state using store.getState()
+- listen to changes using store.subscribe()
