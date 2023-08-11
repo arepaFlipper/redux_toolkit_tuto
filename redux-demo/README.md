@@ -375,3 +375,26 @@ visit: https://jsonplaceholder.typicode.com/users
   error: ''
 }
 ```
+
+## Redux concerns
+Redux requires too much boilerplate code.
+- Action
+- Action object
+- Action creator
+- Switch statement in a reducer
+
+A lot of other packages have to be installed to work with redux:
+- Redux-thunk.
+- Immer.
+- Redux-devtools.
+
+There was a need to improve the developer experience for redux.
+
+This resulted in the creation of Redux Toolkit:
+
+### Redux Toolkit
+Redux toolkit is the official, opinionated, batteries-included tool-set for
+efficient Redux development.
+- Abstract over the setup process
+- Handle the most common use cases
+- Include some useful utilities
