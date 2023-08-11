@@ -255,6 +255,13 @@ Updated state {
 - Provides a third-party extension point between dispatching an action, and the moment it reaches the reducer.
 - Use middleware for logging, crash reporting, performing asynchronous tasks etc.
 
+steps to use middleware in Redux:
+
+1. import the middleware.
+2. pass it into the store as an argument to the createStore() function and pass in the Middleware
+to the apply middleware method. This step is where we extend Redux with additional 
+functionalities (like asynchronous actions management).
+
 `❯ npm i redux-logger`
 
 ```
@@ -288,4 +295,54 @@ Initial state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
    prev state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 18 } }
    action     { type: 'ICECREAM_RESTOCKED', payload: 2 }
    next state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
+```
+
+## Actions
+#### Synchronous Actions
+- As soon as an action was dispatched, the state was immediately update.
+- if you dispatch the CAKE_ORDERED action, the numOfCakes was right away decremented by 1.
+- Same with ICECREAM_ORDERED action as well.
+
+#### Async Actions
+- Asynchronous API calls to fetch data from an end point and use that data in your application.
+
+### Our Application
+Fetches a list of users from an API end point and stores it in the Redux store.
+
+- State ?
+
+- Actions ?
+
+- Reducer ?
+
+### State
+```
+state = {
+  loading: true,
+  data: [],
+  error: '',
+}
+```
+
+**loading** Display a loading spinner in your component.
+**data** List of users.
+**error** Display error to the user.
+
+### Actions
+- FETCH_USERS_REQUESTED --- Fetch list of users.
+- FETCH_USERS_SUCCEEDED --- Fetched successfully.
+- FETCH_USERS_FAILED --- Error when fetching the data.
+
+### Reducers
+```
+case: FETCH_USERS_REQUESTED
+      loading: true
+
+case: FETCH_USERS_SUCCEEDED
+      loading: false
+      users: data (from API)
+
+case: FETCH_USERS_FAILED
+      loading: false
+      error: error (from API)
 ```
