@@ -65,7 +65,7 @@ const fetchUsers = () => {
   return async (dispatch) => {
     await dispatch(fetchUserRequest());
     try {
-      const response = await axios.get('https://jsonplaceholder.typicode.com/usersssdf')
+      const response = await axios.get('https://jsonplaceholder.typicode.com/users')
       const users = await response.data.map((user) => user.id);
       await dispatch(fetchUserSuccess(users));
     } catch (error) {
