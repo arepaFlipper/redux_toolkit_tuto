@@ -346,3 +346,32 @@ case: FETCH_USERS_FAILED
       loading: false
       error: error (from API)
 ```
+
+## Async action creators
+
+- <u>axios</u> 
+  - Requests to an API endpoint.
+- <u>redux-thunk</u> 
+  - Define async action creators.
+  - Middleware.
+
+Install redux-thunk:
+```
+❯ npm install axios redux-thunk
+```
+
+visit: https://jsonplaceholder.typicode.com/
+visit: https://jsonplaceholder.typicode.com/users
+
+```
+❯ node ./async_actions.js
+{ loading: true, users: [], error: '' }
+{
+  loading: false,
+  users: [
+    1, 2, 3, 4,  5,
+    6, 7, 8, 9, 10
+  ],
+  error: ''
+}
+```
