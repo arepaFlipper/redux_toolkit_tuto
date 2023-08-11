@@ -249,3 +249,43 @@ Updated state {
 }
 
 ```
+
+## Middleware
+- Is the suggested way to extend Redux with custom functionality.
+- Provides a third-party extension point between dispatching an action, and the moment it reaches the reducer.
+- Use middleware for logging, crash reporting, performing asynchronous tasks etc.
+
+`❯ npm i redux-logger`
+
+```
+❯ node ./index.js
+Initial state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
+ action CAKE_ORDERED @ 10:08:23.226
+   prev state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
+   action     { type: 'CAKE_ORDERED', payload: 1 }
+   next state { cake: { numOfCakes: 9 }, icecream: { numOfIcecreams: 20 } }
+ action CAKE_ORDERED @ 10:08:23.227
+   prev state { cake: { numOfCakes: 9 }, icecream: { numOfIcecreams: 20 } }
+   action     { type: 'CAKE_ORDERED', payload: 1 }
+   next state { cake: { numOfCakes: 8 }, icecream: { numOfIcecreams: 20 } }
+ action CAKE_ORDERED @ 10:08:23.228
+   prev state { cake: { numOfCakes: 8 }, icecream: { numOfIcecreams: 20 } }
+   action     { type: 'CAKE_ORDERED', payload: 1 }
+   next state { cake: { numOfCakes: 7 }, icecream: { numOfIcecreams: 20 } }
+ action CAKE_RESTOCKED @ 10:08:23.229
+   prev state { cake: { numOfCakes: 7 }, icecream: { numOfIcecreams: 20 } }
+   action     { type: 'CAKE_RESTOCKED', payload: 3 }
+   next state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
+ action ICECREAM_ORDERED @ 10:08:23.229
+   prev state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
+   action     { type: 'ICECREAM_ORDERED', payload: 1 }
+   next state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 19 } }
+ action ICECREAM_ORDERED @ 10:08:23.230
+   prev state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 19 } }
+   action     { type: 'ICECREAM_ORDERED', payload: 1 }
+   next state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 18 } }
+ action ICECREAM_RESTOCKED @ 10:08:23.230
+   prev state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 18 } }
+   action     { type: 'ICECREAM_RESTOCKED', payload: 2 }
+   next state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
+```
