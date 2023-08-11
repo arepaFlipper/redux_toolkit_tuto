@@ -398,3 +398,25 @@ efficient Redux development.
 - Abstract over the setup process
 - Handle the most common use cases
 - Include some useful utilities
+
+## Project Setup
+```
+❯ npm init --yes
+Wrote to /home/tovar/Documents/yt-tutos/Codevolution/Redux-Toolkit-Tutorials/rtk-demo/package.json:
+
+{
+  "name": "rtk-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+❯ npm i @reduxjs/toolkit
+```
+
