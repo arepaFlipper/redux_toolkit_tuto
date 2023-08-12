@@ -451,3 +451,63 @@ Updated state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 18 } }
 Updated state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 20 } }
 
 ```
+## 22 Logger Middleware
+
+```
+❯ npm i redux-logger
+
+added 2 packages, and audited 10 packages in 2s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+```
+
+```
+❯ node ./index.js
+🎱index.js:5 - Initial state, store.getState()
+Initial state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 20 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 9 }, icecream: { num_of_icecreams: 20 } }
+ action cake/ordered @ 19:52:36.086
+   prev state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 20 } }
+   action     { type: 'cake/ordered', payload: undefined }
+   next state { cake: { numOfCakes: 9 }, icecream: { num_of_icecreams: 20 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 8 }, icecream: { num_of_icecreams: 20 } }
+ action cake/ordered @ 19:52:36.088
+   prev state { cake: { numOfCakes: 9 }, icecream: { num_of_icecreams: 20 } }
+   action     { type: 'cake/ordered', payload: undefined }
+   next state { cake: { numOfCakes: 8 }, icecream: { num_of_icecreams: 20 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 7 }, icecream: { num_of_icecreams: 20 } }
+ action cake/ordered @ 19:52:36.090
+   prev state { cake: { numOfCakes: 8 }, icecream: { num_of_icecreams: 20 } }
+   action     { type: 'cake/ordered', payload: undefined }
+   next state { cake: { numOfCakes: 7 }, icecream: { num_of_icecreams: 20 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 20 } }
+ action cake/restocked @ 19:52:36.091
+   prev state { cake: { numOfCakes: 7 }, icecream: { num_of_icecreams: 20 } }
+   action     { type: 'cake/restocked', payload: 3 }
+   next state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 20 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 19 } }
+ action icecream/ordered @ 19:52:36.092
+   prev state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 20 } }
+   action     { type: 'icecream/ordered', payload: undefined }
+   next state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 19 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 18 } }
+ action icecream/ordered @ 19:52:36.093
+   prev state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 19 } }
+   action     { type: 'icecream/ordered', payload: undefined }
+   next state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 18 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 20 } }
+ action icecream/restocked @ 19:52:36.093
+   prev state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 18 } }
+   action     { type: 'icecream/restocked', payload: 2 }
+   next state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 20 } }
+```
