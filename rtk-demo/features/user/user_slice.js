@@ -12,11 +12,11 @@ const initial_state = {
 const fetch_users = createAsyncThunk('users/fetch_users', async () => {
 
   try {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/users')
+    const response = await axios.get('https://jsonplaceholder.typicode.com/incorrect');
     const users = await response.data.map((user) => user.id);
-    return users
+    return users;
   } catch (error) {
-    return error
+    return error.message;
   }
 })
 const user_slice = create_clice({
