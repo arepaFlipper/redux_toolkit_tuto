@@ -60,6 +60,7 @@ const initialIcecreamState = {
 
 const cakeReducer = (state = initialCakeState, action) => {
   switch (action.type) {
+
     case CAKE_ORDERED:
       return {
         ...state,
@@ -79,6 +80,7 @@ const cakeReducer = (state = initialCakeState, action) => {
 
 const icecreamReducer = (state = initialIcecreamState, action) => {
   switch (action.type) {
+
     case ICECREAM_ORDERED:
       return {
         ...state,
@@ -91,6 +93,12 @@ const icecreamReducer = (state = initialIcecreamState, action) => {
         numOfIcecreams: state.numOfIcecreams + action.payload,
       }
 
+    case CAKE_ORDERED:
+      return {
+        ...state,
+        numOfIcecreams: state.numOfIcecreams - 1,
+      };
+
     default:
       return state;
   };
@@ -101,10 +109,12 @@ const rootReducer = combineReducers({
   icecream: icecreamReducer
 });
 
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer); // remove the logger beacuse it makes too much noise.
 console.log('Initial state', store.getState());
 
-const unsubscribe = store.subscribe(() => { });
+const unsubscribe = store.subscribe(() => {
+  console.log('Updated state', store.getState());
+});
 
 const actions = bindActinCreators({ orderCake, restockCake, orderIcecream, restockIcecream }, store.dispatch);
 actions.orderCake();
