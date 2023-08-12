@@ -4,7 +4,7 @@ const axios = require('axios');
 const createStore = redux.createStore;
 const applyMiddleware = redux.applyMiddleware;
 
-const initialState = {
+const initial_state = {
   loading: false,
 
   users: [],
@@ -35,7 +35,7 @@ const fetchUserFailed = (error) => {
   }
 }
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initial_state, action) => {
   switch (action.type) {
     case FETCH_USERS_REQUESTED:
       return {

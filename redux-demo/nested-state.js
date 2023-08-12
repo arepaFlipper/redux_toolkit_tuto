@@ -1,7 +1,7 @@
 const redux = require('redux');
 const produce = require('immer').produce;
 
-const initialState = {
+const initial_state = {
   name: 'Cristian F. Tovar',
   address: {
     street: 'Av. Miguel Hidalgo 123',
@@ -18,7 +18,7 @@ const updateStreet = (street) => {
   };
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initial_state, action) => {
   switch (action.type) {
     case STREET_UPDATED:
       return produce(state, (draft) => {
