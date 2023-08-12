@@ -429,3 +429,25 @@ immer being used under the hood.
 - Dispatch actions on the store using store dispatch.
 - inspect the state using store.getState()
 - listen to changes using store.subscribe()
+
+```
+
+❯ node ./index.js
+🎱index.js:5 - Initial state, store.getState()
+Initial state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 20 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 9 }, icecream: { num_of_icecreams: 20 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 8 }, icecream: { num_of_icecreams: 20 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 7 }, icecream: { num_of_icecreams: 20 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 20 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 19 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 18 } }
+🎱index.js:10 - New state, store.getState()
+Updated state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 20 } }
+
+```

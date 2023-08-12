@@ -1,12 +1,12 @@
 const create_slice = require('@reduxjs/toolkit').createSlice;
 
-const initialState = {
+const initial_state = {
   numOfCakes: 10,
 }
 
 const cake_slice = create_slice({
   name: 'cake',
-  initialState,
+  initialState: initial_state,
   reducers: {
     ordered: (state) => {
       state.numOfCakes--; // createSlice uses immer under the hood
