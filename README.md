@@ -599,3 +599,15 @@ Updated state { cake: { numOfCakes: 10 }, icecream: { num_of_icecreams: 17 } }
 
 In the same way both the num_of_icecreams and num_of_cakes decreases by 1, when 
 an icecream is ordered.
+
+```
+❯ node ./redux-demo/index.js
+Initial state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 20 } }
+Updated state { cake: { numOfCakes: 9 }, icecream: { numOfIcecreams: 19 } }
+Updated state { cake: { numOfCakes: 8 }, icecream: { numOfIcecreams: 18 } }
+Updated state { cake: { numOfCakes: 7 }, icecream: { numOfIcecreams: 17 } }
+Updated state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 17 } }
+Updated state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 16 } }
+Updated state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 15 } }
+Updated state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 17 } }
+```
