@@ -611,3 +611,41 @@ Updated state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 16 } }
 Updated state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 15 } }
 Updated state { cake: { numOfCakes: 10 }, icecream: { numOfIcecreams: 17 } }
 ```
+
+## Async Thunks
+
+```
+npm i axios
+```
+
+After executing the following command:
+```
+❯ node ./rtk-demo/index.js
+🎱index.js:5 - Initial state, store.getState()
+Initial state {
+  cake: { numOfCakes: 10 },
+  icecream: { num_of_icecreams: 20 },
+  user: { loading: false, users: [], error: '' }
+}
+🍌index.js:11 - Updated state, store.getState()
+Updated state {
+  cake: { numOfCakes: 10 },
+  icecream: { num_of_icecreams: 20 },
+  user: { loading: true, users: [], error: '' }
+}
+🍌index.js:11 - Updated state, store.getState()
+Updated state {
+  cake: { numOfCakes: 10 },
+  icecream: { num_of_icecreams: 20 },
+  user: {
+    loading: false,
+    users: [
+      1, 2, 3, 4,  5,
+      6, 7, 8, 9, 10
+    ],
+    error: ''
+  }
+}
+```
+We see the state is going initially from loading false to true,
+to users being populated with 10 users.
