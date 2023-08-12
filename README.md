@@ -649,3 +649,11 @@ Updated state {
 ```
 We see the state is going initially from loading false to true,
 to users being populated with 10 users.
+
+## React Project Setup
+
+```
+❯ npm create vite@latest react-rtk-demo
+❯ cd react-rtk-demo
+❯ npm i axios @reduxjs/toolkit
+```
