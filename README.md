@@ -657,3 +657,11 @@ to users being populated with 10 users.
 ❯ cd react-rtk-demo
 ❯ npm i axios @reduxjs/toolkit
 ```
+
+## Provider
+
+```
+❯ npm i react-redux
+❯ npm run start
+```
+
