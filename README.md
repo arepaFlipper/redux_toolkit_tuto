@@ -2,10 +2,9 @@
 
 ## Cake Shop
 
-| Entities | Activities |
-|-------------- | -------------- |
+| Entities || Activities ||
+|-------------- | -------------- |-------------- | -------------- |
 | Entity | Detail | Activity | Detail |
-|-------------- | -------------- | -------------- |  ---------------- |
 | Shop | Stores ckaes on a shelf | Customer | Order a cake |
 | Shopkeeper | Behind the counter | Shopkeeper | Box a cake from the self |
 | Customer | At the store entrance | Sale | Receipt to keep track |
