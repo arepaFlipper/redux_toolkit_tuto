@@ -92,7 +92,7 @@ const reducer = (state = initialState, action) => {
 - Function that accepts state and action as arguments, and returns the next state of the application.
 - `(previousState, action)=> newState`
 
-![reducers](Redux6.png)
+![reducers](https://github.com/arepaFlipper/redux_toolkit_tuto/blob/main/redux-demo/Redux6.png)
 
 ## Store
 - One store for the entire application.
